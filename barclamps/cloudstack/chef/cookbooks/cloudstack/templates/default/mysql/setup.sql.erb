@@ -1,0 +1,5 @@
+UPDATE mysql.user SET Password=PASSWORD('<%= node['cloudstack']['mysql']['root_pwd'] %>') WHERE User='root';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '<%= node['cloudstack']['mysql']['root_pwd'] %>' WITH GRANT OPTION;
+GRANT RELOAD,PROCESS ON *.* TO 'root'@'%';
+GRANT USAGE ON *.* TO 'root'@'%';
+FLUSH PRIVILEGES;

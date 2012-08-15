@@ -1,0 +1,15 @@
+
+%p
+  = render :partial => "barclamp/node_selector"
+
+:javascript
+  $(document).ready(function(){
+    var constraints = { 
+      "cloudstack-dbserver": { "unique": false, "count": 1, "admin":false } 
+      "cloudstack-mgtserver": { "unique": false, "count": 1, "admin":false } 
+      "cloudstack-agent": { "unique": false, "count": -1, "admin":false } 
+      "cloudstack-usage": { "unique": false, "count": -1, "admin":false } 
+    };
+    node_selector($('#drag_drop'), constraints);
+  });
+
