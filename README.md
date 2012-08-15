@@ -14,7 +14,7 @@ A Barclamp is a module component that implements functionality for Crowbar.  Cor
 About this particular barclamp
 -------------------------------------
 
-this small barclamp is the result of a brief investigative work to figure out how crowbar could be cohered in deploying cluster based software out of its comfort zone of openstack, hadoop and DELL hardware.
+this small barclamp is the result of a brief investigative work to figure out how crowbar could be coerced in deploying cluster based software out of its comfort zone of openstack, hadoop and DELL hardware.
 It is by no means fully featured, maintained or even properly tested as i only did the bare minimum to know what i wanted to know.
 
 
