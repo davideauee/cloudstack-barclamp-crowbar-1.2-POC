@@ -1,0 +1,46 @@
+{
+  "id": "bc-template-cloudstack",
+  "description": "Installation for Cloudstack",
+  "attributes": {
+    "cloudstack": {
+		  "mysql": {
+        "root_pwd": "bob",
+        "cloud_pwd": "bob"
+      },
+		  "hypervisor_hosts": [
+        "172.16.240.5",
+        "172.16.240.6"
+      ],
+		  "primary_storages": [
+		    {
+	        "host": "172.16.240.200",
+	        "target": "iqn.2006-01.com.openfiler:tsn.294acc78372b"
+			  }
+		  ],
+	    "secondary_storages": [
+	      {
+	        "host": "172.16.240.200",
+	        "mount": "/mnt/clodstack-nfs/cloudstacksecondary/Main/"
+	      }
+	    ]
+    }
+  },
+  "deployment": {
+    "cloudstack": {
+      "crowbar-revision": 0,
+      "elements": {},
+      "element_order": [
+        [ "cloudstack-dbserver" ],
+        [ "cloudstack-agent" ],
+        [ "cloudstack-mgtserver" ],
+				[ "cloudstack-usage" ]
+      ],
+      "config": {
+        "environment": "cloudstack-base-config",
+        "mode": "full",
+        "transitions": false,
+        "transition_list": []
+      }
+    }
+  }
+}

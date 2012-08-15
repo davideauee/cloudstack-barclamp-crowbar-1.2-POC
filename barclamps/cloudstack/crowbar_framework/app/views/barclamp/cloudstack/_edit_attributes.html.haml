@@ -1,0 +1,13 @@
+
+%input#proposal_attributes{:type => "hidden", :name => "proposal_attributes", :value => @proposal.raw_data['attributes'][@proposal.barclamp].to_json}
+%p
+  %label{:for => "proposal_attributes"}= t('.attributes')
+  = link_to t('raw'), proposal_barclamp_path(:id => @proposal.name, :controller => @proposal.barclamp, :dep_raw => @dep_raw, :attr_raw => true), :style => "float: right;"
+  %div.container
+    %p
+      %label{ :for => :backing_type }= t('.root_pwd')
+      %input#root_pwd{:type => "text", :name => "root_pwd", :'data-default' => @proposal.raw_data['attributes'][@proposal.barclamp]["mysql"]["root_pwd"], :onchange => "update_value('mysql/root_pwd','root_pwd', 'string')"}
+    %p
+      %label{ :for => :backing_type }= t('.cloud_pwd')
+      %input#cloud_pwd{:type => "text", :name => "cloud_pwd", :'data-default' => @proposal.raw_data['attributes'][@proposal.barclamp]["mysql"]["cloud_pwd"], :onchange => "update_value('mysql/cloud_pwd','cloud_pwd', 'string')"}
+
