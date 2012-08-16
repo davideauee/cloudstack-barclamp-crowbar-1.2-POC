@@ -19,15 +19,15 @@ if db_servers.length > 0
   root_pwd = node[:cloudstack][:mysql][:root_pwd]
 
   execute "setup cloud DB" do
-    command "cloud-setup-databases cloud:#{cloud_pwd}@#{db_host} --deploy-as=root:#{root_pwd} && touch /opt/poc/cloudstack/install/log/cloudDbConfigured"
-    creates "/opt/poc/cloudstack/install/log/cloudDbConfigured"
+    command "cloud-setup-databases cloud:#{cloud_pwd}@#{db_host} --deploy-as=root:#{root_pwd} && touch /opt/dell/cloudstack/install/log/cloudDbConfigured"
+    creates "/opt/dell/cloudstack/install/log/cloudDbConfigured"
   end
 end
 
 # setup the mgt service
 execute "setup-cloud-MGT" do
-  command "cloud-setup-management && touch /opt/poc/cloudstack/install/log/cloudMgtConfigured"
-  creates "/opt/poc/cloudstack/install/log/cloudMgtConfigured"
+  command "cloud-setup-management && touch /opt/dell/cloudstack/install/log/cloudMgtConfigured"
+  creates "/opt/dell/cloudstack/install/log/cloudMgtConfigured"
 end
 
 
@@ -75,8 +75,8 @@ if node[:cloudstack][:secondary_storages]
     end
     mount_label = "#{secondary_storage[:host]}#{secondary_storage[:mount]}".tr("/", "_").tr(".", "_")
     execute "install secondary storage for #{mount_label}" do
-      command "/usr/lib64/cloud/agent/scripts/storage/secondary/cloud-install-sys-tmplt -m /mnt/secondary -u http://download.cloud.com/releases/2.2.0/systemvm.vhd.bz2 -h xenserver -F && touch /opt/poc/cloudstack/install/log/secondaryStorageSetup_#{mount_label}"
-      creates "/opt/poc/cloudstack/install/log/secondaryStorageSetup_#{mount_label}"
+      command "/usr/lib64/cloud/agent/scripts/storage/secondary/cloud-install-sys-tmplt -m /mnt/secondary -u http://download.cloud.com/releases/2.2.0/systemvm.vhd.bz2 -h xenserver -F && touch /opt/dell/cloudstack/install/log/secondaryStorageSetup_#{mount_label}"
+      creates "/opt/dell/cloudstack/install/log/secondaryStorageSetup_#{mount_label}"
       timeout 1200
     end
     execute "unmount secondary share" do

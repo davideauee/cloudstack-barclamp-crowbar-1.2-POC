@@ -4,7 +4,7 @@
 #
 #
 
-remote_directory "/opt/poc/cloudstack/install" do
+remote_directory "/opt/dell/cloudstack/install" do
   source "cloudstackInstall"
   owner "root"
   group "root"
@@ -24,12 +24,12 @@ cookbook_file "/etc/apt/sources.list.d/cloudstack.list" do
 end
 
 execute "sync-package-repos" do
-  command "aptitude update && touch /opt/poc/cloudstack/install/log/reposSynced"
-  creates "/opt/poc/cloudstack/install/log/reposSynced"
+  command "aptitude update && touch /opt/dell/cloudstack/install/log/reposSynced"
+  creates "/opt/dell/cloudstack/install/log/reposSynced"
   action :run
 end
 
-directory "/opt/poc/cloudstack/install/log" do
+directory "/opt/dell/cloudstack/install/log" do
   owner "root"
   group "root"
   mode "0755"
