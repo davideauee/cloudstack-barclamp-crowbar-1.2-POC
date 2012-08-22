@@ -42,7 +42,9 @@ To install:
    - Make sure to configure the networking before finalising the install (i.e. actually calling the 'install' script) by editing '/opt/dell/chef/data_bags/crowbar/bc-template-network.json'. See here for details on the configuration file: https://github.com/dellcloudedge/crowbar/wiki/Annotated-network-json-file
 
  - install the barclamp:
-   - call '/opt/dell/bin/barclamp_install' against the extracted barclamp directory.
+   - add the cloudstack deb packages under barclamps/cloudstack/chef/cookbooks/cloudstack/files/default/cloudstackInstall/oss
+   - copy the barclamp dir over to your crowbar admin node.
+   - call '/opt/dell/bin/barclamp_install' against the barclamp directory.
    - optionally bounce the 'crowbar' service (otherwise some UI elements will not load). You could also restart crowbar in dev mode via '/opt/dell/bin/dev_mode.sh' for extra logs
 
    
