@@ -1,0 +1,19 @@
+expected packages:
+
+cloud-agent-deps_2.2.13-1_amd64.deb     
+cloud-console-proxy_2.2.13-1_amd64.deb  
+cloud-setup_2.2.13-1_amd64.deb
+cloud-agent-libs_2.2.13-1_amd64.deb     
+cloud-core_2.2.13-1_amd64.deb           
+cloud-system-iso_2.2.13-1_amd64.deb
+cloud-agent-scripts_2.2.13-1_amd64.deb  
+cloud-daemonize_2.2.13-1_amd64.deb      
+cloud-test_2.2.13-1_amd64.deb
+cloud-agent_2.2.13-1_amd64.deb          
+cloud-deps_2.2.13-1_amd64.deb           
+cloud-usage_2.2.13-1_amd64.deb
+cloud-client-ui_2.2.13-1_amd64.deb      
+cloud-python_2.2.13-1_amd64.deb         
+cloud-utils_2.2.13-1_amd64.deb
+cloud-client_2.2.13-1_amd64.deb         
+cloud-server_2.2.13-1_amd64.deb
